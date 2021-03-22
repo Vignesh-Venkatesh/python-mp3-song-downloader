@@ -1,4 +1,4 @@
-# python-mp3-song-downloader
+# Python MP3 Song Downloader
 
 **You must create the following directories:**  ***(Remember, it is case sensitive)***
 - Video
