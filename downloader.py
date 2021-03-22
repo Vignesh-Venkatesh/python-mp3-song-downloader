@@ -1,13 +1,28 @@
 import csv
-from pytube import YouTube
-from moviepy.editor import *
 import os
 import random
-from mutagen.mp3 import MP3
-from mutagen.id3 import ID3, APIC, error,TIT2, TPE1, TPE2
 import time
 
-
+#==================================================
+#Checking if the following libraries are installed
+try:
+    from pytube import YouTube
+except ImportError:
+    os.system('python -m pip install pytube')
+try:
+    from mutagen.mp3 import MP3
+except ImportError:
+    os.system('python -m pip install mutagen')
+try:
+    from moviepy.editor import *
+except ImportError:
+    os.system('python -m pip install moviepy')
+#==================================================
+    
+from pytube import YouTube
+from mutagen.mp3 import MP3
+from mutagen.id3 import ID3, APIC, error,TIT2, TPE1, TPE2
+from moviepy.editor import *
 
 #Menu 
 def menu():
