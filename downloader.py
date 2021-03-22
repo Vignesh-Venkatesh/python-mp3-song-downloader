@@ -43,28 +43,12 @@ def start():
     directories = os.listdir()
     #Checks if 'Video' directory exists in the folder
     if 'Video' not in directories:
-        print('\n')
-        print("=============================")
-        print("|          ERROR            |")
-        print("=============================")
-        print("|  Video Folder is missing  |")
-        print("|============================")
-        print("|Please create the folder   |")
-        print("|and restart the program    |")
-        print("=============================")
-        time.sleep(5)
+        #If not there, it creates the file
+        os.mkdir('Video/')
     #Checks if 'Audio' directory exists in the folder
     if 'Audio' not in directories:
-        print('\n')
-        print("=============================")
-        print("|          ERROR            |")
-        print("=============================")
-        print("|  Audio Folder is missing  |")
-        print("|============================")
-        print("|Please create the folder   |")
-        print("|and restart the program    |")
-        print("=============================")
-        time.sleep(5)
+        #If not there, it creates the file
+        os.mkdir('Audio/')
         
     print('\n')
     file_name = input('Enter (text) file name where you have stored the data:')
@@ -87,15 +71,8 @@ def start():
         print('\n')
         #Checks if 'Album_Art' directory exists in the folder, only if the user enters Y for the prev choice
         if 'Album_Art' not in directories:
-            print("=============================")
-            print("|          ERROR            |")
-            print("=============================")
-            print("|Album_Art Folder is missing|")
-            print("|============================")
-            print("|Please create the folder   |")
-            print("|and restart the program    |")
-            print("=============================")
-            time.sleep(5)
+            #If not there, it creates the file
+            os.mkdir('Album_Art/')
         #Lists files in the 'Album_Art' directory
         files = os.listdir('Album_Art/')
         #Prints an error message if there are no files present
@@ -187,9 +164,9 @@ def downloader(file_name,album_art):
             print('Artist:',artist)
             
             tag = ID3()
-            tag.add(TIT2(encoding=3, text=(title))) #Editing Title ID3 tag
-            tag.add(TPE1(encoding=3, text=(artist))) #Editing Artist ID3 tag
-            tag.add(TPE2(encoding=3, text=(artist))) #Editing Song Artist ID3 tag
+            tag.add(TIT2(encoding=3, text=(title)))
+            tag.add(TPE1(encoding=3, text=(artist)))
+            tag.add(TPE2(encoding=3, text=(artist)))
             tag.save(mp3_path, v2_version=3)
 
             #Adding album art
