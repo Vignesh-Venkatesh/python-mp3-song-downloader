@@ -1,9 +1,6 @@
 # Python MP3 Song Downloader
 
-**You must create the following directories:**  ***(Remember, it is case sensitive)***
-- Video
-- Audio
-- Album_Art
+
 
 **The following libraries must be installed:** ***USE (pip install <library_name>) or (pip3 install <library_name>)***
 - pytube3
