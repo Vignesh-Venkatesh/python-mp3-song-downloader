@@ -187,9 +187,9 @@ def downloader(file_name,album_art):
             print('Artist:',artist)
             
             tag = ID3()
-            tag.add(TIT2(encoding=3, text=(title)))
-            tag.add(TPE1(encoding=3, text=(artist)))
-            tag.add(TPE2(encoding=3, text=(artist)))
+            tag.add(TIT2(encoding=3, text=(title))) #Editing Title ID3 tag
+            tag.add(TPE1(encoding=3, text=(artist))) #Editing Artist ID3 tag
+            tag.add(TPE2(encoding=3, text=(artist))) #Editing Song Artist ID3 tag
             tag.save(mp3_path, v2_version=3)
 
             #Adding album art
