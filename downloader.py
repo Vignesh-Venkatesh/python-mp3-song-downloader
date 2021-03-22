@@ -105,7 +105,7 @@ def start():
             if i[-4:]=='.png' or i[-4:]=='.jpg' or i[-5]=='.jpeg':
                 ctr=ctr+1
         #Checks if any pictures exist in the directory
-        if ctr>0:
+        if ctr==0:
             print("===================================")
             print("|NO PICTURES PRESENT IN THE FOLDER|")
             print("===================================")
